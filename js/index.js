@@ -1,28 +1,24 @@
-const a = +prompt('Введите первое число');
-const calc = prompt('Выбери оператор: + - / * %');
-const b = +prompt('Введите второе число');
+const a = Number(prompt('Введите первое число'));
+const operator = prompt('Выберите оператор: + - / * ');
+const b = Number(prompt('Введите второе число'));
 
 if (!isNaN(a) && !isNaN(b)) {
-  switch (calc) {
+  switch (operator) {
     case '+':
-      alert(`${a} ${calc} ${b} = ${a + b}`);
+      alert(`${a} ${operator} ${b} = ${a + b}`);
       break;
     case '-':
-      alert(`${a} ${calc} ${b} = ${a - b}`);
+      alert(`${a} ${operator} ${b} = ${a - b}`);
       break;
     case '*':
-      alert(`${a} ${calc} ${b} = ${a * b}`);
+      alert(`${a} ${operator} ${b} = ${a * b}`);
       break;
     case '/':
-      alert(`${a} ${calc} ${b} = ${a / b}`);
-      break;
-    case '%':
-      alert(`${a} ${calc} ${b} = ${a % b}`);
+      alert(`${a} ${operator} ${b} = ${a / b}`);
       break;
     default:
-      alert('Введите символы + - / * %');
-      break;
+      alert('Введите корректно один из операторов: + - / * ');
   }
 } else {
-  alert('Введите ЧИСЛО!');
+  alert('Введите корректно ЧИСЛО!');
 }
