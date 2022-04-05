@@ -1,24 +1,13 @@
 const a = Number(prompt('Введите первое число'));
-const operator = prompt('Выберите оператор: + - / * ');
+const operator = prompt('Выберите оператор: + , - , / , * ');
 const b = Number(prompt('Введите второе число'));
-
 if (!isNaN(a) && !isNaN(b)) {
-  switch (operator) {
-    case '+':
-      alert(`${a} ${operator} ${b} = ${a + b}`);
-      break;
-    case '-':
-      alert(`${a} ${operator} ${b} = ${a - b}`);
-      break;
-    case '*':
-      alert(`${a} ${operator} ${b} = ${a * b}`);
-      break;
-    case '/':
-      alert(`${a} ${operator} ${b} = ${a / b}`);
-      break;
-    default:
-      alert('Введите корректно один из операторов: + - / * ');
-  }
+  let sum = (operator === '+') ? a + b :
+    (operator === '-') ? a - b :
+      (operator === '/') ? a / b :
+        (operator === '*') ? a * b :
+          'введите корректно один из операторов: + , - , / , * ';
+  alert(`Ваш результат:  ${sum}`);
 } else {
   alert('Введите корректно ЧИСЛО!');
 }
